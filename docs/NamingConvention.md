@@ -18,6 +18,7 @@ This document outlines the naming conventions used for schemas, tables, views, c
 ## **General Principles**
 
 - **Naming Conventions**: Use snake_case, with lowercase letters and underscores (`_`) to separate words.
+- **GitHub Naming Conventions**: Use PascalCase (UpperCamelCase) for GitHub files. Words are written together without spaces or underscores and each word starts with a capital (uppercase) letter.
 - **Language**: Use English for all names.
 - **Avoid Reserved Words**: Do not use SQL reserved words as object names.
 
