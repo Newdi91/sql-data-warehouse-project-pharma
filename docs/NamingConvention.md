@@ -26,13 +26,13 @@ This document outlines the naming conventions used for schemas, tables, views, c
 
 ### **Bronze Rules**
 - **`<layer>_<entity>`**  
-  - `<entity>`: Exact table name from the source system.  
-  - Example: `crm_customer_info` → Customer information from the CRM system.
+  - `<entity>`: Table name from the source file, according to the naming convention.  
+  - Example: `bronze.unique_id` → Unique ID from the source file.
 
 ### **Silver Rules**
 - **`<layer>_<entity>`**    
-  - `<entity>`: Exact table name from the source system.  
-  - Example: `crm_customer_info` → Customer information from the CRM system.
+  - `<entity>`: Table name from the source file, according to the naming convention.  
+  - Example: `silver.unique_id` → Unique ID from the source file.
 
 ### **Gold Rules**
 - All names must use meaningful, business-aligned names for tables.
