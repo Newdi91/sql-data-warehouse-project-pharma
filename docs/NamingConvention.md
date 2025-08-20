@@ -26,12 +26,12 @@ This document outlines the naming conventions used for schemas, tables, views, c
 
 ### **Bronze Rules**
 - **`<layer>_<entity>`**  
-  - `<entity>`: Table name from the source file, according to the naming convention.  
+  - `<entity>`: Table name derived from the source file, in accordance with the established naming conventions  
   - Example: `bronze.unique_id` → Unique ID from the source file.
 
 ### **Silver Rules**
 - **`<layer>_<entity>`**    
-  - `<entity>`: Table name from the source file, according to the naming convention.  
+  - `<entity>`: Table name derived from the source file, in accordance with the established naming conventions 
   - Example: `silver.unique_id` → Unique ID from the source file.
 
 ### **Gold Rules**
