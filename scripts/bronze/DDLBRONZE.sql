@@ -14,11 +14,11 @@ IF OBJECT_ID ('bronze.drug', 'U') IS NOT NULL
 	DROP TABLE bronze.drug;
 
 CREATE TABLE bronze.drug (
-uniqueID INT,
-drugName NVARCHAR(50),
-condition NVARCHAR(50),
-review NVARCHAR(50),
-rating NVARCHAR(50),
-date DATE,
-usefulCount INT
+    uniqueID INT,              
+    drugName VARCHAR(255),     
+    condition VARCHAR(255),        
+    review VARCHAR(MAX),         
+    rating INT,                  
+    date DATE,                    
+    usefulCount INT        
 );
