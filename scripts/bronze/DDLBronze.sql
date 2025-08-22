@@ -10,10 +10,10 @@ Script Purpose:
 */
 
 
-IF OBJECT_ID ('bronze.drug', 'U') IS NOT NULL
-	DROP TABLE bronze.drug;
+IF OBJECT_ID ('bronze_drug', 'U') IS NOT NULL
+	DROP TABLE bronze_drug;
 
-CREATE TABLE bronze.drug (
+CREATE TABLE bronze_drug (
     uniqueID INT,              
     drugName VARCHAR(255),     
     condition VARCHAR(255),        
