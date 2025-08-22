@@ -1,5 +1,17 @@
-/* We fixed the DDL by renaming the columns to align with the defined naming convention
-and added a metadata column to capture the table creation timestamp.*/
+/*
+===============================================================================
+DDL Script: Create Silver Table
+===============================================================================
+Script Purpose:
+    This script creates tables in the 'silver' schema, dropping existing tables 
+    if they already exist.
+	Standardized the schema by aligning column names with the naming convention
+	and appended a creation_date metadata field.
+	
+	  Run this script to re-define the DDL structure of 'silver' Tables
+===============================================================================
+*/
+
 
 IF OBJECT_ID ('silver.drug', 'U') IS NOT NULL
 	DROP TABLE silver.drug;
@@ -12,5 +24,5 @@ CREATE TABLE silver.drug (
     rating INT,                  
     date DATE,                    
     useful_count INT,   
-    dwh_create_date DATETIME2 DEFAULT GETDATE()  --metadata column--
+    dwh_create_date DATETIME2 DEFAULT GETDATE()  
 );
