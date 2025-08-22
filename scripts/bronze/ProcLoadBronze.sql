@@ -32,9 +32,9 @@ BEGIN
 
         SET @start_time = GETDATE();
         PRINT '>>Truncating Table: bronze.drug';
-        TRUNCATE TABLE bronze.drug;
+        TRUNCATE TABLE bronze_drug;
           PRINT '>>Inserting Data Into: bronze.drug';
-        BULK INSERT bronze.drug
+        BULK INSERT bronze_drug
         FROM 'C:\sqlDWpharmaSOURCE\drugsComTrain_raw.csv'
         WITH (
             FORMAT = 'CSV',           
