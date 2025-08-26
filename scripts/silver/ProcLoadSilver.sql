@@ -13,6 +13,11 @@ Parameters:
     None. 
 	  This stored procedure does not accept any parameters or return any values.
 
+Stored Procedure Error Monitoring and Load Tracking:
+    This stored procedure includes comprehensive error logging, capturing the type of error,
+    its numeric code, and the line number where it occurred. For debugging purposes,
+    it also tracks the duration of the loading process.
+
 Usage Example:
     EXEC load_silver;
 ===============================================================================
