@@ -6,11 +6,9 @@ Script Purpose:
     This script performs various quality checks for data consistency, accuracy, 
     and standardization across the 'silver' layer. It includes checks for:
     - Null or duplicate primary keys.
-    - Unwanted spaces in string fields.
     - Data standardization and consistency.
-    - Invalid date ranges and orders.
-    - Data consistency between related fields.
-
+    - Invalid date ranges.
+    
 Usage Notes:
     - Run these checks after data loading Silver Layer.
     - Investigate and resolve any discrepancies found during the checks.
@@ -20,18 +18,31 @@ Usage Notes:
 
 --Check or NULLS or duplicates in Primary Key
 SELECT
-	uniqueID,
+	unique_id,
 	COUNT(*)
 FROM silver_drug
 GROUP BY uniqueID
 HAVING COUNT(*) >1
 
 
---Check for unwanted spaces
-SELECT drugName
+--Check for still NULL in col condition
+SELECT
+	unique_id,
+	drug_name,
+	condition
 FROM silver_drug
-WHERE drugName != TRIM(drugName)
+WHERE condition IS NULL;
 
-SELECT condition
+--Check for still ASCII char in col review
+SELECT
+	unique_id,
+	drug_name,
+	review
 FROM silver_drug
-WHERE condition != TRIM(condition)
+WHERE review LIKE '%&%';
+
+--Check for invalid future date in col date
+SELECT
+    [date]
+FROM bronze_drug
+WHERE [date] > GETDATE()
