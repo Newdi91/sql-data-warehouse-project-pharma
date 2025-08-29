@@ -39,18 +39,18 @@ This document outlines the naming conventions used for schemas, tables, views, c
 - All names must use meaningful, business-aligned names for tables.
 - **`<layer>_<category>_<entity>`**  
   - `<category>`: Describes the role of the table, such as `dim` (dimension) or `fact` (fact table).  
-  - `<entity>`: Descriptive name of the table, aligned with the business domain (e.g., `customers`, `products`, `sales`).  
+  - `<entity>`: Descriptive name of the table, aligned with the business domain (e.g., `drug`, `review`, `condition`).  
   - Examples:
-    - `dim_customers` → Dimension table for customer data.  
-    - `fact_sales` → Fact table containing sales transactions.  
+    - `gold_dim_drug` → Dimension table for drugs data.  
+    - `fact_review` → Fact table containing the reviews of customers.  
 
 #### **Glossary of Category Patterns**
 
 | Pattern     | Meaning                           | Example(s)                              |
 |-------------|-----------------------------------|-----------------------------------------|
-| `dim_`      | Dimension table                  | `dim_customer`, `dim_product`           |
-| `fact_`     | Fact table                       | `fact_sales`                            |
-| `report_`   | Report table                     | `report_customers`, `report_sales_monthly`   |
+| `dim_`      | Dimension table                   | `dim_drug`, `dim_condition`             |
+| `fact_`     | Fact table                        | `fact_review`                           |
+| `report_`   | Report table                      | `report_avg_rating`                     |
 
 ## **Column Naming Conventions**
 
