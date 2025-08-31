@@ -277,6 +277,8 @@ BEGIN
                 WHEN s.orig_condition LIKE 'Panic Disorde%' THEN 'Panic Disorder'
                 WHEN s.orig_condition LIKE '%atigue' THEN 'Fatigue'
                 WHEN s.orig_condition LIKE '%ibromyalgia' THEN 'Fibromyalgia'
+                WHEN s.orig_condition LIKE 'zen Shoulde' THEN 'Zen shoulder'
+                WHEN s.orig_condition LIKE '%users found this%' THEN 'Not Listed / Other'
                 ELSE s.orig_condition
             END AS condition,
             s.review_clean AS review,
