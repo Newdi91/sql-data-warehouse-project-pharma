@@ -29,7 +29,8 @@ SELECT
 FROM silver_drug
 GROUP BY drug_name;
 
-
+GO
+	
 -- =============================================================================
 -- Create Dimension: gold_dim_condition
 -- =============================================================================
@@ -44,3 +45,25 @@ SELECT
 	condition
 FROM silver_drug
 GROUP BY condition;
+
+GO
+
+-- =============================================================================
+-- Create Dimension: gold_dim_condition
+-- =============================================================================
+
+IF OBJECT_ID('gold_dim_date', 'V') IS NOT NULL
+    DROP VIEW gold_dim_date;
+GO
+
+CREATE VIEW gold_dim_date AS
+SELECT
+	ROW_NUMBER() OVER(ORDER BY date) AS date_key,
+	date,
+	YEAR(date) AS year,
+	MONTH(date) AS month,
+	DATEPART(QUARTER, date) AS quarter
+FROM silver_drug
+GROUP BY date;
+
+GO
