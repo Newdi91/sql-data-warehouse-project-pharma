@@ -28,3 +28,19 @@ SELECT
 	drug_name
 FROM silver_drug
 GROUP BY drug_name;
+
+
+-- =============================================================================
+-- Create Dimension: gold_dim_condition
+-- =============================================================================
+
+IF OBJECT_ID('gold_dim_condition', 'V') IS NOT NULL
+    DROP VIEW gold_dim_condition;
+GO
+
+CREATE VIEW gold_dim_condition AS
+SELECT
+	ROW_NUMBER() OVER(ORDER BY condition) AS condition_key,
+	condition
+FROM silver_drug
+GROUP BY condition;
