@@ -241,7 +241,7 @@ BEGIN
         SELECT
             s.uniqueID,
             s.drugName,
-            --Handling NULL in col condition
+            
             CASE
                 WHEN s.drugName = 'Acetaminophen / butalbital / caffeine / codeine' THEN 'Headache'
                 WHEN s.drugName = 'Acetaminophen / butalbital / caffeine' THEN 'Headache'
