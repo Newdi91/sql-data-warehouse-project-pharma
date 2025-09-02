@@ -23,14 +23,21 @@ IF OBJECT_ID('gold_dim_drug', 'V') IS NOT NULL
 GO
 
 CREATE VIEW gold_dim_drug AS
+WITH cte_AggregatedDrugs AS (
+    SELECT
+        STRING_AGG(drug_name, ', ') WITHIN GROUP (ORDER BY drug_name) AS drug_name
+    FROM silver_drug
+    GROUP BY review
+)
+
 SELECT
-	ROW_NUMBER() OVER(ORDER BY drug_name) AS drug_key,
-	drug_name
-FROM silver_drug
+    ROW_NUMBER() OVER (ORDER BY drug_name) AS drug_key,
+    drug_name
+FROM cte_AggregatedDrugs
 GROUP BY drug_name;
 
 GO
-	
+
 -- =============================================================================
 -- Create Dimension: gold_dim_condition
 -- =============================================================================
@@ -47,9 +54,8 @@ FROM silver_drug
 GROUP BY condition;
 
 GO
-
 -- =============================================================================
--- Create Dimension: gold_dim_condition
+-- Create Dimension: gold_dim_date
 -- =============================================================================
 
 IF OBJECT_ID('gold_dim_date', 'V') IS NOT NULL
@@ -67,3 +73,18 @@ FROM silver_drug
 GROUP BY date;
 
 GO
+-- =============================================================================
+-- Create Dimension: gold_dim_review_text
+-- =============================================================================
+
+IF OBJECT_ID('gold_dim_review_text', 'V') IS NOT NULL
+    DROP VIEW gold_dim_review_text;
+GO
+
+CREATE VIEW gold_dim_review_text AS
+SELECT
+	ROW_NUMBER() OVER(ORDER BY review) AS review_key,
+	review AS review_text	
+FROM silver_drug
+GROUP BY review;
+
