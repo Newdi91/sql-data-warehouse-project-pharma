@@ -1,0 +1,139 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
+  <diagram name="Pagina-1" id="DOaE5bGsElxDNfxtlyYj">
+    <mxGraphModel dx="786" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="221" width="240" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-29" value="drug" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f5f5f5;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="160" y="360" width="160" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-75" value="&lt;b&gt;DRUG&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="9ckyEq9Iz1SqfH3wJBMa-29" vertex="1">
+          <mxGeometry y="26" width="160" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-71" value="&lt;b&gt;CONDITION&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="9ckyEq9Iz1SqfH3wJBMa-29" vertex="1">
+          <mxGeometry y="38" width="160" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-77" value="&lt;b&gt;DATE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="9ckyEq9Iz1SqfH3wJBMa-29" vertex="1">
+          <mxGeometry y="48" width="160" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-76" value="&lt;b&gt;REVIEW&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="9ckyEq9Iz1SqfH3wJBMa-29" vertex="1">
+          <mxGeometry y="60" width="160" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="105" width="250" height="655" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-3" value="&lt;font style=&quot;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 26px;&quot;&gt;&amp;nbsp;Data integration model &lt;/span&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;(Star schema)&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="10" width="720" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-4" value="CSV" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="200" y="210" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-33" value="dim_drug" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#fff2cc;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="490" y="140" width="140" height="72" as="geometry">
+            <mxRectangle x="495" y="140" width="90" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-44" value="drug_key&lt;br&gt;drug_name" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="9ckyEq9Iz1SqfH3wJBMa-33" vertex="1">
+          <mxGeometry y="26" width="140" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-65" value="&lt;b&gt;DRUG&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="9ckyEq9Iz1SqfH3wJBMa-33" vertex="1">
+          <mxGeometry y="60" width="140" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-34" value="dim_condition" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#fff2cc;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="490" y="240" width="140" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-45" value="condition_key&lt;br&gt;condition_name" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="9ckyEq9Iz1SqfH3wJBMa-34" vertex="1">
+          <mxGeometry y="26" width="140" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-63" value="&lt;b&gt;CONDITION&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="9ckyEq9Iz1SqfH3wJBMa-34" vertex="1">
+          <mxGeometry y="60" width="140" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-35" value="fact_review" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#dae8fc;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="490" y="340" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-43" value="drug_id&amp;nbsp;&amp;nbsp;&lt;br&gt;condition_id&lt;div&gt;date_id&lt;/div&gt;&lt;div&gt;review_id&lt;/div&gt;&lt;div&gt;source_review_id&lt;/div&gt;&lt;div&gt;rating&lt;/div&gt;&lt;div&gt;useful_count&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="9ckyEq9Iz1SqfH3wJBMa-35" vertex="1">
+          <mxGeometry y="26" width="140" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-36" value="dim_date" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#fff2cc;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="490" y="500" width="140" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-46" value="date_key&lt;br&gt;date&lt;br&gt;year&lt;br&gt;month&lt;br&gt;quarter&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="9ckyEq9Iz1SqfH3wJBMa-36" vertex="1">
+          <mxGeometry y="26" width="140" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-68" value="&lt;b&gt;DATE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="9ckyEq9Iz1SqfH3wJBMa-36" vertex="1">
+          <mxGeometry y="120" width="140" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-37" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Drug reviews with ratings,condition, a useful counts&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="160" y="329" width="160" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-38" value="dim_review_text" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#fff2cc;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="490" y="660" width="140" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-47" value="review_key&lt;br&gt;review_text" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="9ckyEq9Iz1SqfH3wJBMa-38" vertex="1">
+          <mxGeometry y="26" width="140" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-61" value="&lt;b&gt;REVIEW&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="9ckyEq9Iz1SqfH3wJBMa-38" vertex="1">
+          <mxGeometry y="60" width="140" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-50" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Drug reference&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="480" y="120" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-51" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Measures of drug review&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="480" y="320" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-52" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Medical condition&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="475" y="220" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-53" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Date attributes for reviews&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="480" y="480" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-54" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Full text of user review&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="480" y="640" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-55" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.122;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="9ckyEq9Iz1SqfH3wJBMa-43" target="9ckyEq9Iz1SqfH3wJBMa-44" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="460" as="sourcePoint" />
+            <mxPoint x="510" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="400" y="380" />
+              <mxPoint x="400" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-56" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="9ckyEq9Iz1SqfH3wJBMa-43" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="392" as="sourcePoint" />
+            <mxPoint x="489" y="277.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="380" y="395" />
+              <mxPoint x="379" y="278" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-58" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.012;entryY=0.112;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.014;exitY=0.368;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="9ckyEq9Iz1SqfH3wJBMa-43" target="9ckyEq9Iz1SqfH3wJBMa-46" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="400" as="sourcePoint" />
+            <mxPoint x="488.52" y="536.972" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="388" y="408" />
+              <mxPoint x="388" y="537" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ckyEq9Iz1SqfH3wJBMa-59" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="9ckyEq9Iz1SqfH3wJBMa-43" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="419" as="sourcePoint" />
+            <mxPoint x="489" y="694.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="380" y="423" />
+              <mxPoint x="379" y="695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
