@@ -88,3 +88,36 @@ SELECT
 FROM silver_drug
 GROUP BY review;
 
+GO
+
+
+-- =============================================================================
+-- Create Fact: gold_fact_review
+-- =============================================================================
+
+IF OBJECT_ID('gold_fact_review', 'V') IS NOT NULL
+    DROP VIEW gold_fact_review;
+GO
+
+CREATE VIEW gold_fact_review AS
+SELECT
+    drug_key,
+    condition_key,
+    date_key,    
+    unique_id AS source_review_id,
+    review_key,
+    rating,
+    useful_count
+FROM silver_drug s
+
+JOIN gold_dim_drug dr 
+ON dr.drug_name = s.drug_name
+
+JOIN gold_dim_condition con
+ON s.condition = con.condition
+
+JOIN gold_dim_date d
+ON s.date = d.date
+
+JOIN gold_dim_review_text txt
+ON s.review = txt.review_text
