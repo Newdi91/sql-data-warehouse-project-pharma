@@ -43,7 +43,7 @@ It consists of **dimension tables** and a **fact table** for drug reviews, ratin
 
 | Column Name  | Data Type     | Description                                                                 |
 |--------------|--------------|------------------------------------------------------------------------------|
-| date_key     | BIGINT       | Surrogate key in `YYYYMMDD` format, uniquely identifying each date.          |
+| date_key     | BIGINT       | Surrogate key uniquely identifying each date.                                |
 | date         | DATE         | Calendar date in standard format.                                            |
 | year         | INT          | Year of the review date.                                                     |
 | month        | INT          | Month number (1–12).                                                         | 
