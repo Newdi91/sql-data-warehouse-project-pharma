@@ -15,66 +15,66 @@ It consists of **dimension tables** and a **fact table** for drug reviews, ratin
 
 ---
 
-## 1. gold.dim_drug
+## 1. gold_dim_drug
 
 **Purpose**: Stores drug details with a surrogate key for analytical joins.  
 
 | Column Name | Data Type     | Description                                                                 |
-|-------------|--------------|-----------------------------------------------------------------------------|
-| drug_key    | INT          | Surrogate key uniquely identifying each drug in the dimension table.        |
-| drug_name   | NVARCHAR(255)| Name of the drug, cleaned and standardized.                                 |
+|-------------|--------------|------------------------------------------------------------------------------|
+| drug_key    | BIGINT          | Surrogate key uniquely identifying each drug in the dimension table.      |
+| drug_name   | NVARCHAR(255)| Name of the drug, cleaned and standardized.                                  |
 
 ---
 
-## 2. gold.dim_condition
+## 2. gold_dim_condition
 
 **Purpose**: Stores medical conditions associated with drug usage and reviews.  
 
 | Column Name     | Data Type     | Description                                                                 |
 |-----------------|--------------|-----------------------------------------------------------------------------|
-| condition_key   | INT          | Surrogate key uniquely identifying each condition.                         |
-| condition_name  | NVARCHAR(255)| Cleaned and standardized medical condition name.                           |
+| condition_key   | BIGINT          | Surrogate key uniquely identifying each condition.                       |
+| condition_name  | NVARCHAR(255)| Cleaned and standardized medical condition name.                            |
 
 ---
 
-## 3. gold.dim_date
+## 3. gold_dim_date
 
 **Purpose**: Provides temporal attributes for reviews to support time-based analysis.  
 
 | Column Name  | Data Type     | Description                                                                 |
-|--------------|--------------|-----------------------------------------------------------------------------|
-| date_key     | INT          | Surrogate key in `YYYYMMDD` format, uniquely identifying each date.         |
-| date         | DATE         | Calendar date in standard format.                                           |
-| year         | INT          | Year of the review date.                                                    |
-| month        | INT          | Month number (1–12).                                                        |
-| quarter      | INT          | Quarter of the year (1–4).                                                  |
+|--------------|--------------|------------------------------------------------------------------------------|
+| date_key     | BIGINT       | Surrogate key in `YYYYMMDD` format, uniquely identifying each date.          |
+| date         | DATE         | Calendar date in standard format.                                            |
+| year         | INT          | Year of the review date.                                                     |
+| month        | INT          | Month number (1–12).                                                         | 
+| quarter      | INT          | Quarter of the year (1–4).                                                   |
 
 ---
 
-## 4. gold.dim_review_text
+## 4. gold_dim_review_text
 
 **Purpose**: Stores the textual content of reviews.  
 
 | Column Name   | Data Type     | Description                                                                 |
-|---------------|--------------|-----------------------------------------------------------------------------|
-| review_key    | INT          | Surrogate key uniquely identifying each review text record.                 |
-| review_text   | NVARCHAR(MAX)| The full text of the user’s review.                                         |
+|---------------|--------------|------------------------------------------------------------------------------|
+| review_key    | BIGINT          | Surrogate key uniquely identifying each review text record.               |
+| review_text   | NVARCHAR(MAX)| The full text of the user’s review.                                          |
 
 ---
 
-## 5. gold.fact_review
+## 5. gold_fact_review
 
 **Purpose**: Stores drug review facts with numerical measures and foreign keys linking to dimensions.  
 
 | Column Name       | Data Type     | Description                                                                 |
-|-------------------|--------------|-----------------------------------------------------------------------------|
-| drug_key          | INT          | Foreign key linking to `gold.dim_drug`.                                     |
-| condition_key     | INT          | Foreign key linking to `gold.dim_condition`.                                |
-| date_key          | INT          | Foreign key linking to `gold.dim_date`.                                     |
-| review_key        | INT          | Foreign key linking to `gold.dim_review_text`.                              |
-| source_review_id  | NVARCHAR(50) | Original review identifier from the raw dataset (for traceability).         |
-| rating            | DECIMAL(3,1) | User rating score (0–10 scale, as provided by source).                      |
-| useful_count      | INT          | Number of users who marked the review as useful.                            |
+|-------------------|--------------|------------------------------------------------------------------------------|
+| drug_key          | BIGINT       | Foreign key linking to `gold.dim_drug`.                                      |
+| condition_key     | BIGINT       | Foreign key linking to `gold.dim_condition`.                                 |
+| date_key          | BIGINT       | Foreign key linking to `gold.dim_date`.                                      |
+| review_key        | BIGINT       | Foreign key linking to `gold.dim_review_text`.                               |
+| source_review_id  | INT          | Original review identifier from the raw dataset (for traceability).          | 
+| rating            | INT          | User rating score (0–10 scale, as provided by source).                       |
+| useful_count      | INT          | Number of users who marked the review as useful.                             |
 
 ---
 
