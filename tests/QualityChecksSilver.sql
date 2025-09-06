@@ -3,7 +3,7 @@
 Quality Checks
 ===============================================================================
 Script Purpose:
-    This script performs various quality checks for data consistency, accuracy, 
+    This script performs various quality checks for data consistency, accuracy 
     and standardization across the 'silver' layer. It includes checks for:
     - Null or duplicate primary keys.
     - Data standardization and consistency.
