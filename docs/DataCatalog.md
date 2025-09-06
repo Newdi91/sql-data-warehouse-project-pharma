@@ -2,7 +2,7 @@
 
 ## Overview
 The **Gold Layer** is the business-level data representation, structured to support analytical and reporting use cases.  
-It consists of **dimension tables** and a **fact table** for drug reviews, ratings, and usefulness metrics.
+It consists of **dimension views** and a **fact view** for drug reviews, ratings, and usefulness metrics.
 
 ---
 
@@ -17,61 +17,61 @@ It consists of **dimension tables** and a **fact table** for drug reviews, ratin
 
 ## 1. gold_dim_drug
 
-**Purpose**: Stores drug details with a surrogate key for analytical joins.  
+**Purpose**: Stores drug details as a **dimension view** with a surrogate key for analytical joins.  
 
 | Column Name | Data Type     | Description                                                                 |
 |-------------|--------------|------------------------------------------------------------------------------|
-| drug_key    | BIGINT          | Surrogate key uniquely identifying each drug in the dimension table.      |
+| drug_key    | BIGINT       | Surrogate key uniquely identifying each drug in the dimension view.        |
 | drug_name   | NVARCHAR(255)| Name of the drug, cleaned and standardized.                                  |
 
 ---
 
 ## 2. gold_dim_condition
 
-**Purpose**: Stores medical conditions associated with drug usage and reviews.  
+**Purpose**: Stores medical conditions as a **dimension view** associated with drug usage and reviews.  
 
 | Column Name     | Data Type     | Description                                                                 |
 |-----------------|--------------|-----------------------------------------------------------------------------|
-| condition_key   | BIGINT          | Surrogate key uniquely identifying each condition.                       |
+| condition_key   | BIGINT       | Surrogate key uniquely identifying each condition.                           |
 | condition_name  | NVARCHAR(255)| Cleaned and standardized medical condition name.                            |
 
 ---
 
 ## 3. gold_dim_date
 
-**Purpose**: Provides temporal attributes for reviews to support time-based analysis.  
+**Purpose**: Provides temporal attributes as a **dimension view** for reviews to support time-based analysis.  
 
 | Column Name  | Data Type     | Description                                                                 |
 |--------------|--------------|------------------------------------------------------------------------------|
 | date_key     | BIGINT       | Surrogate key uniquely identifying each date.                                |
 | date         | DATE         | Calendar date in standard format.                                            |
 | year         | INT          | Year of the review date.                                                     |
-| month        | INT          | Month number (1–12).                                                         | 
-| quarter      | INT          | Quarter of the year (1–4).                                                   |
+| month        | INT          | Month number (1–12).                                                        | 
+| quarter      | INT          | Quarter of the year (1–4).                                                  |
 
 ---
 
 ## 4. gold_dim_review_text
 
-**Purpose**: Stores the textual content of reviews.  
+**Purpose**: Stores the textual content of reviews as a **dimension view**.  
 
 | Column Name   | Data Type     | Description                                                                 |
 |---------------|--------------|------------------------------------------------------------------------------|
-| review_key    | BIGINT          | Surrogate key uniquely identifying each review text record.               |
+| review_key    | BIGINT       | Surrogate key uniquely identifying each review text record.                 |
 | review_text   | NVARCHAR(MAX)| The full text of the user’s review.                                          |
 
 ---
 
 ## 5. gold_fact_review
 
-**Purpose**: Stores drug review facts with numerical measures and foreign keys linking to dimensions.  
+**Purpose**: Stores drug review facts as a **fact view** with numerical measures and foreign keys linking to dimension views.  
 
 | Column Name       | Data Type     | Description                                                                 |
 |-------------------|--------------|------------------------------------------------------------------------------|
-| drug_key          | BIGINT       | Foreign key linking to `gold.dim_drug`.                                      |
-| condition_key     | BIGINT       | Foreign key linking to `gold.dim_condition`.                                 |
-| date_key          | BIGINT       | Foreign key linking to `gold.dim_date`.                                      |
-| review_key        | BIGINT       | Foreign key linking to `gold.dim_review_text`.                               |
+| drug_key          | BIGINT       | Foreign key linking to `gold.dim_drug` view.                                 |
+| condition_key     | BIGINT       | Foreign key linking to `gold.dim_condition` view.                            |
+| date_key          | BIGINT       | Foreign key linking to `gold.dim_date` view.                                 |
+| review_key        | BIGINT       | Foreign key linking to `gold.dim_review_text` view.                           |
 | source_review_id  | INT          | Original review identifier from the raw dataset (for traceability).          | 
 | rating            | INT          | User rating score (0–10 scale, as provided by source).                       |
 | useful_count      | INT          | Number of users who marked the review as useful.                             |
@@ -82,4 +82,4 @@ It consists of **dimension tables** and a **fact table** for drug reviews, ratin
 
 - **Surrogate Keys (`*_key`)**: Artificial identifiers used for joins, ensuring consistency and performance.  
 - **Source Tracking**: `source_review_id` allows traceability back to the raw dataset.  
-- **No Text in Fact Table**: All textual content is stored in `dim_review_text` for performance optimization.
+- **No Text in Fact View**: All textual content is stored in `dim_review_text` for performance optimization.
