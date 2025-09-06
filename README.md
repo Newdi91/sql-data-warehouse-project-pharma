@@ -37,15 +37,15 @@ Key points:
 
 **Gold Views**:
 
-- **Dimensions**:  
+- **Dimension Views**:  
   - `dim_drug`  
   - `dim_condition`  
   - `dim_date`  
   - `dim_review_text`  
 
-- **Fact Table**:  
-  - Contains FKs to dimensions  
-  - Measures: `useful_count`, `rating`  
+- **Fact View**:  
+  - Contains FKs to dimension views  
+  - Measures: `useful_count`, `rating`
 
 This design supports **efficient analytics** and prepares the warehouse for **future insights**.
 
