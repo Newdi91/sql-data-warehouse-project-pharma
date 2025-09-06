@@ -81,7 +81,8 @@ db_pharmaproject/
 │   ├── DataFlowDiagram.drawio.png   # Visual representation of data flow
 │   ├── DataIntegration.drawio.png   # Shows how data is split into dimensions and fact table
 │   ├── DataWarehouseProject.drawio.png # High-level architecture of the data warehouse
-│   └── NamingConvention.md          # Details naming conventions used
+│   ├── NamingConvention.md          # Details naming conventions used
+│   └── RequirementsAnalysis.md      # Project overview, objectives, and requirements
 ├── scripts/                         # SQL scripts for data processing
 │   ├── bronze/                      # Raw data ingestion scripts
 │   │   ├── DDLBronze.sql            # DDL to create bronze layer table
@@ -90,11 +91,13 @@ db_pharmaproject/
 │   │   ├── DDLSilver.sql            # DDL to create silver layer table
 │   │   └── ProcLoadSilver.sql       # Stored procedure to load cleaned and transformed data
 │   ├── gold/                        # Final views for analytics
-│   │   └── DDLGold.sql              # Script to create final views for analysis
+│   │   └── CreateGoldViews.sql      # Script to create final views for analysis
 │   └── tests/                       # SQL scripts for testing data integrity
 │       ├── QualityChecksSilver.sql  # Script for quality checks in silver layer
 │       └── QualityChecksGold.sql    # Script for quality checks in gold layer
-└── README.md                        # Project overview and instructions
+├── LICENSE                          # Project license
+├── README.md                        # Project overview and instructions
+└── RequirementsAnalysis.md          # Project overview, objectives, and requirements
 ```
 
 yaml
