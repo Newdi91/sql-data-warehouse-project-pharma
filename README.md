@@ -74,10 +74,27 @@ Warehouse structure allows future exploration of:
 ## 📂 Repository Structure
 ```
 db_pharmaproject/
-├─ data/ # Raw datasets (Bronze layer)
-├─ sql/ # T-SQL scripts for ETL and Gold views
-├─ docs/ # Documentation and design notes
-└─ README.md # This file
+├── datasets/                        # Raw data files
+│   └── source.csv                   # Original CSV file
+├── docs/                            # Project documentation
+│   ├── DataCatalog.md               # Describes data sources and fields
+│   ├── DataFlowDiagram.drawio.png   # Visual representation of data flow
+│   ├── DataIntegration.drawio.png   # Shows how data is split into dimensions and fact table
+│   ├── DataWarehouseProject.drawio.png # High-level architecture of the data warehouse
+│   └── NamingConvention.md          # Details naming conventions used
+├── scripts/                         # SQL scripts for data processing
+│   ├── bronze/                      # Raw data ingestion scripts
+│   │   ├── DDLBronze.sql            # DDL to create bronze layer table
+│   │   └── ProcLoadBronze.sql       # Stored procedure to load data from CSV to bronze table
+│   ├── silver/                      # Data cleaning and transformation scripts
+│   │   ├── DDLSilver.sql            # DDL to create silver layer table
+│   │   └── ProcLoadSilver.sql       # Stored procedure to load cleaned and transformed data
+│   ├── gold/                        # Final views for analytics
+│   │   └── DDLGold.sql              # Script to create final views for analysis
+│   └── tests/                       # SQL scripts for testing data integrity
+│       ├── QualityChecksSilver.sql  # Script for quality checks in silver layer
+│       └── QualityChecksGold.sql    # Script for quality checks in gold layer
+└── README.md                        # Project overview and instructions
 ```
 
 yaml
