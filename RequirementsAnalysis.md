@@ -42,7 +42,7 @@ The goal of this project is to build a Data Warehouse using **SQL** that transfo
 - Maintain data integrity and handle missing or inconsistent values
 
 ## 7. Constraints and Assumptions
-- Dataset is static and will not change frequently
+- Dataset is static
 - Focus on structured CSV input only
 - Data Warehouse will be implemented using SQL 
 - Initial project scope limited to one dataset for simplicity
